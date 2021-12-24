@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Fuente Roboto -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300&display=swap" rel="stylesheet">
+
+    <!-- Iconos -->
+    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <!-- <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/all.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/brands.css">
+    <link rel="stylesheet" href="../../node_modules/@fortawesome/fontawesome-free/css/solid.css"> -->
+
+    <!-- Estilos CSS -->
+    <link rel="stylesheet" href="../css/main.css">
+    <link rel="stylesheet" href="../css/fondo.css">
+    
+    <!-- Favico -->
+    <link rel="shortcut icon" href="../images/favico.ico" type="image/x-icon">
+    <title>Informacion Personal</title>
+</head>
+
+<body class="fondo" style="font-family: Roboto;">
+    <header class="text-gray-600 body-font rounded-md shadow-lg w-11/12 mx-auto bg-transparent">
+        <div class="bg-gray-50 bg-opacity-100 container mx-auto flex flex-wrap p-5 flex-col md:flex-row items-center">
+            <a class="flex title-font font-medium items-center text-gray-900 mb-4 md:mb-0" href="/">
+                <img src="../images/logoHTML.svg" class="h-10">
+                <span class="ml-3 text-xl">Health Keeper</span>
+            </a>
+        </div>
+    </header>
+
+        <div class="bg-gray-50 w-11/12 mx-auto my-8 py-6 px-5 shadow-2xl rounded-2xl">
+            <a class="text-2xl font-semibold text-gray-900 mx-4 text-center">Datos personales</a>
+            <form action="/actualizar" method="post">
+                <% for(var i = 0; i < 1; ++i) {%>
+                    <div class="grid grid-cols-3 gap-4 mt-4">
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-red-50 text-red-700 text-2xl">
+                                    <i class="fas fa-user"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Nombre(s)</div>
+                                    <input type="text" name="name"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value= <%=r[i].Nombre%> >
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-pink-50 text-pink-600 text-2xl">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Apellido Paterno</div>
+                                    <input type="text" name="surname1"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].ApellidoPaterno%>>
+                                        
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-pink-50 text-pink-600 text-2xl">
+                                    <i class="far fa-user"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Apellido Materno</div>
+                                    <input type="text" name="surname2"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].ApellidoMaterno%>>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-blue-100 text-blue-500">
+                                    <i class="fas fa-birthday-cake text-2xl"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4 ">
+                                    <div class="text-sm text-gray-500">Edad</div>
+                                    <input type="number" name="age"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].Edad%>>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-purple-100 text-purple-500">
+                                    <i class="fas fa-venus-mars text-2xl"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Género</div>
+                                    <input type="text" name="gender"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].Genero%>>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-gray-100 text-purple-800 text-2xl">
+                                    <i class="fas fa-portrait"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Imagen de perfil</div>
+                                    <div class="w-11/12 bg-white rounded border-dashed border-2 border-gray-300 focus:ring-1  text-gray-50  py-1 px-3 leading-4">
+                                        <!-- <input type="file" name="imageData" class="opacity-10 w-10/12"> -->a
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="grid grid-cols-3 gap-4 mt-4">
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-green-50 text-green-700 text-2xl">
+                                    <i class="fas fa-phone"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Teléfono</div>
+                                    <input type="tel" name="phone"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].Telefono%>>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-gray-100 text-indigo-800 text-2xl">
+                                    <i class="fas fa-envelope"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Email</div>
+                                    <input type="email" name="email"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].Email%>>
+                                </div>
+                            </div>
+                        </div>
+            
+                        <div class="md:col-span-1 sm:col-span-12 ">
+                            <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                                <div
+                                    class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-yellow-50 text-yellow-600 text-2xl">
+                                    <i class="fas fa-unlock-alt"></i>
+                                </div>
+                                <div class="flex flex-col flex-grow ml-4">
+                                    <div class="text-sm text-gray-500">Contraseña</div>
+                                    <input type="password" name="password"
+                                        class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                        value=<%=r[i].Contraseña%>>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+            
+                    <div class="grid grid-cols-3 gap-4 mt-4">
+                    <div class="md:col-span-1 sm:col-span-12 ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-yellow-100 text-yellow-500">
+                                <i class="fas fa-weight text-2xl"></i>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Peso</div>
+                                <input type="text" name="weight"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].Peso%>>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="md:col-span-1 sm:col-span-12  ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-indigo-100 text-indigo-500">
+                                <i class="fas fa-ruler-vertical text-2xl"></i>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Talla</div>
+                                <input type="text" name="height"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].Talla%>>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="md:col-span-1 sm:col-span-12 ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-red-100 text-red-500">
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor"
+                                    class="bi bi-droplet-fill h-6 w-6" viewBox="0 0 16 16">
+                                    <path
+                                        d="M8 16a6 6 0 0 0 6-6c0-1.655-1.122-2.904-2.432-4.362C10.254 4.176 8.75 2.503 8 0c0 0-6 5.686-6 10a6 6 0 0 0 6 6ZM6.646 4.646l.708.708c-.29.29-1.128 1.311-1.907 2.87l-.894-.448c.82-1.641 1.717-2.753 2.093-3.13Z" />
+                                </svg>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Tipo sanguíneo</div>
+                                <input type="text" name="bloodType"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].TipoSangre%>>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="md:col-span-1 sm:col-span-12 ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-pink-100 text-pink-500">
+                                <i class="fas fa-heart text-2xl"></i>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Donador de órganos</div>
+                                <input type="text" name="donor"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].DonanteOrganos%>>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="md:col-span-1 sm:col-span-12 ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-green-100 text-green-500">
+                                <i class="fas fa-viruses text-2xl"></i>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Enfermedad activa</div>
+                                <input type="text" name="disease"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].EnfermedadActiva%>>
+                            </div>
+                        </div>
+                    </div>
+        
+                    <div class="md:col-span-1 sm:col-span-12 ">
+                        <div class="flex flex-row bg-white shadow-md rounded-2xl p-4">
+                            <div
+                                class="flex items-center justify-center flex-shrink-0 h-12 w-12 rounded-xl bg-gray-100 text-gray-500">
+                                <i class="fas fa-tablets text-2xl"></i>
+                            </div>
+                            <div class="flex flex-col flex-grow ml-4">
+                                <div class="text-sm text-gray-500">Alergia médica</div>
+                                <input type="text" name="allergy"
+                                    class="w-11/12 bg-white rounded border border-gray-300 focus:ring-1 focus:ring-blue-400 text-gray-700  py-1 px-3 leading-4 transition-colors duration-200 ease-in-out"
+                                    value=<%=r[i].AlergiaMedica%>>
+                            </div>
+                        </div>
+                    </div>
+                    </div>  
+                <% } %>
+                <div class=" text-center mt-6">
+                        <button class="text-white bg-blue-700 hover:bg-blue-500 rounded text-lg text-center py-2 px-2 mx-auto">Actualizar Información</button>
+                </div>
+            </form>
+        </div>
+
+    <!-- Scripts del date picker -->
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/datepicker.bundle.js"></script>
+    <script src="https://unpkg.com/@themesberg/flowbite@1.1.1/dist/flowbite.bundle.js"></script>
+
+</body>
+
+</html>

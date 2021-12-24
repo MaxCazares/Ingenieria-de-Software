@@ -1,0 +1,27 @@
+{
+  "name": "heal-keeper",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node public/index.js",
+    "build:css": "postcss ./src/tailwind.css -o ./public/app/views/css/main.css",
+    "build": "NODE_ENV=production postcss ./src/tailwind.css -o ./public/app/views/css/main.css"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@tailwindcss/forms": "^0.3.4",
+    "@tailwindcss/jit": "^0.1.10",
+    "autoprefixer": "^10.4.0",
+    "body-parser": "^1.19.0",
+    "ejs": "^3.1.6",
+    "express": "^4.17.1",
+    "mysql": "^2.18.1",
+    "postcss-cli": "^9.0.2",
+    "tailwindcss": "^2.2.19",
+    "win-node-env": "^0.4.0"
+  }
+}
